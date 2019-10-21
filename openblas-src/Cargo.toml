@@ -1,0 +1,9 @@
+[package]
+name = "openblas-src"
+version = "0.1.0"
+authors = ["NeedPainkillers <46500324+NeedPainkillers@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

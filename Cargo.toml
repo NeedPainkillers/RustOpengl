@@ -1,0 +1,15 @@
+[package]
+name = "sdlrust"
+version = "0.1.0"
+authors = ["NeedPainkillers <46500324+NeedPainkillers@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at httcaps://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+openblas-src = "0.5.6"
+piston_window = "0.105.0"
+image = "0.22.3"
+ndarray = "0.13.0"
+ndarray-linalg = "0.7.0"
