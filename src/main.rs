@@ -139,15 +139,16 @@ impl Renderer {
         //building plane for red color
         let b: Array1<f64> = array![(sp.0).2 as f64, (sp.1).2 as f64, (sp.2).2 as f64];
         let par_red = a.solve_into(b).unwrap();
-        let lerp_red = |x: u32 , y: u32| -> u8 {(par_red[0]*(x as f64)+par_red[1]*(y as f64)) as u8};
+        println!("{:?}", par_red);
+        let lerp_red = |x: u32 , y: u32| -> u8 {(par_red[0]*(x as f64) + par_red[1]*(y as f64) + par_red[2]) as u8};
         //green
         let b: Array1<f64> = array![(sp.0).3 as f64, (sp.1).3 as f64, (sp.2).3 as f64];
         let par_green = a.solve_into(b).unwrap();
-        let lerp_green = |x: u32 , y: u32| -> u8 {(par_green[0]*(x as f64)+par_green[1]*(y as f64)) as u8};
+        let lerp_green = |x: u32 , y: u32| -> u8 {(par_green[0]*(x as f64) + par_green[1]*(y as f64) + par_green[2]) as u8};
         //blue
         let b: Array1<f64> = array![(sp.0).4 as f64, (sp.1).4 as f64, (sp.2).4 as f64];
         let par_blue = a.solve_into(b).unwrap();
-        let lerp_blue = |x: u32 , y: u32| -> u8 {(par_blue[0]*(x as f64)+par_blue[1]*(y as f64)) as u8};
+        let lerp_blue = |x: u32 , y: u32| -> u8 {(par_blue[0]*(x as f64) + par_blue[1]*(y as f64) + par_blue[2]) as u8};
 
         for i in (sorted_points.2).1..(sorted_points.1).1 {
             x1 = ((sorted_points.2).0 as i32 + (tg3 * (i as f32 - (sorted_points.2).1 as f32)) as i32) as u32;
@@ -161,6 +162,7 @@ impl Renderer {
                     let green = lerp_green(j,i) as u8;
                     let blue = lerp_blue(j,i) as u8;
 
+
                     pixels[(j * 4 + self.image.width() * i * 4    ) as usize] = red;
                     pixels[(j * 4 + self.image.width() * i * 4 + 1) as usize] = green;
                     pixels[(j * 4 + self.image.width() * i * 4 + 2) as usize] = blue;
@@ -171,6 +173,7 @@ impl Renderer {
                     let red = lerp_red(j,i) as u8;
                     let green = lerp_green(j,i) as u8;
                     let blue = lerp_blue(j,i) as u8;
+
 
                     pixels[(j * 4 + self.image.width() * i * 4    ) as usize] = red;
                     pixels[(j * 4 + self.image.width() * i * 4 + 1) as usize] = green;
@@ -191,6 +194,7 @@ impl Renderer {
                     let green = lerp_green(j,i) as u8;
                     let blue = lerp_blue(j,i) as u8;
 
+
                     pixels[(j * 4 + self.image.width() * i * 4    ) as usize] = red;
                     pixels[(j * 4 + self.image.width() * i * 4 + 1) as usize] = green;
                     pixels[(j * 4 + self.image.width() * i * 4 + 2) as usize] = blue;
@@ -201,6 +205,7 @@ impl Renderer {
                     let red = lerp_red(j,i) as u8;
                     let green = lerp_green(j,i) as u8;
                     let blue = lerp_blue(j,i) as u8;
+
 
                     pixels[(j * 4 + self.image.width() * i * 4    ) as usize] = red;
                     pixels[(j * 4 + self.image.width() * i * 4 + 1) as usize] = green;
