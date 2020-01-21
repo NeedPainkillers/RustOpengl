@@ -6,6 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../sdlrust\examples" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../sdlrust\tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../sdlrust\benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../RustOpengl\examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../RustOpengl\tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../RustOpengl\benches" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
